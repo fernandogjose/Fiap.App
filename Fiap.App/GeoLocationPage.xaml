@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Fiap.App.GeoLocationPage"
+             Title="GeoLocator">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Latitude:" FontSize="Medium" HorizontalOptions="EndAndExpand" FontAttributes="Bold" VerticalTextAlignment="End" />
+                <Label Grid.Row="0" Grid.Column="1" x:Name="lblLatitude" FontSize="Medium" HorizontalOptions="StartAndExpand" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Longitude:" FontSize="Medium" HorizontalOptions="EndAndExpand" FontAttributes="Bold" VerticalTextAlignment="End" />
+                <Label Grid.Row="1" Grid.Column="1" x:Name="lblLongitude" FontSize="Medium" HorizontalOptions="StartAndExpand" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

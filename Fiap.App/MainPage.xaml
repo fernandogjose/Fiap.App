@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Fiap.App.MainPage"
+             BackgroundColor="White"
+             Title="Fernando - RM 335137">
+
+    <Grid VerticalOptions="FillAndExpand" Padding="15" RowSpacing="10" ColumnSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="#f35e20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Text="Geo Localização" BackgroundColor="#efefef" TextColor="#f35e20" FontSize="Medium" HorizontalTextAlignment="Center"></Label>
+            <Image Source="placeholder.png" HeightRequest="80" VerticalOptions="Center" Margin="15"/>
+
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGeoLocation_Tapped" NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+
+        <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="#f35e20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Text="Foto" BackgroundColor="#efefef" TextColor="#f35e20" FontSize="Medium" HorizontalTextAlignment="Center"></Label>
+            <Image Source="image.png" HeightRequest="80" VerticalOptions="Center" Margin="15"/>
+
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapPhoto_Tapped" NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#f35e20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Text="MongoDb" BackgroundColor="#efefef" TextColor="#f35e20" FontSize="Medium" HorizontalTextAlignment="Center"></Label>
+            <Image Source="db.png" HeightRequest="80" VerticalOptions="Center" Margin="15"/>
+
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapMongoDb_Tapped" NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+
+        <StackLayout Grid.Row="2" Grid.Column="0" Grid.RowSpan="2" BackgroundColor="#f35e20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Text="API" BackgroundColor="#efefef" TextColor="#f35e20" FontSize="Medium" HorizontalTextAlignment="Center"></Label>
+            <Image Source="users.png" VerticalOptions="Center" HeightRequest="80" Margin="30" />
+
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapApi_Tapped" NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+
+        <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="#f35e20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Text="" BackgroundColor="#efefef" TextColor="#f35e20" FontSize="Medium" HorizontalTextAlignment="Center"></Label>
+            <Image Source="" HeightRequest="80" VerticalOptions="Center" Margin="15"/>
+
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapApi_Tapped" NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+
+        <StackLayout Grid.Row="3" Grid.Column="1" BackgroundColor="#f35e20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Text="" BackgroundColor="#efefef" TextColor="#f35e20" FontSize="Medium" HorizontalTextAlignment="Center"></Label>
+            <Image Source="" HeightRequest="80" VerticalOptions="Center" Margin="15"/>
+
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapApi_Tapped" NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
