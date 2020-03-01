@@ -1,6 +1,10 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Push;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace Fiap.App
 {
@@ -17,6 +21,7 @@ namespace Fiap.App
 
         protected override void OnStart()
         {
+            AppCenter.Start("android=2ac41b0f-f352-4b41-9b55-7f30ee6b53f5;", typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()
