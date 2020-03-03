@@ -31,5 +31,15 @@ namespace Fiap.App
         {
             Navigation.PushAsync(new ApiPage());
         }
+
+        private void TapCalculadora_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CalculadoraPage());
+        }
+
+        private void TapImc_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ImcPage());
+        }
     }
 }

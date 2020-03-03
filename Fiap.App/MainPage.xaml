@@ -58,20 +58,20 @@
         </StackLayout>
 
         <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="#f35e20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Label Text="" BackgroundColor="#efefef" TextColor="#f35e20" FontSize="Medium" HorizontalTextAlignment="Center"></Label>
+            <Label Text="Calculadora" BackgroundColor="#efefef" TextColor="#f35e20" FontSize="Medium" HorizontalTextAlignment="Center"></Label>
             <Image Source="" HeightRequest="80" VerticalOptions="Center" Margin="15"/>
 
             <StackLayout.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapApi_Tapped" NumberOfTapsRequired="1" />
+                <TapGestureRecognizer Tapped="TapCalculadora_Tapped" NumberOfTapsRequired="1" />
             </StackLayout.GestureRecognizers>
         </StackLayout>
 
         <StackLayout Grid.Row="3" Grid.Column="1" BackgroundColor="#f35e20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Label Text="" BackgroundColor="#efefef" TextColor="#f35e20" FontSize="Medium" HorizontalTextAlignment="Center"></Label>
+            <Label Text="IMC" BackgroundColor="#efefef" TextColor="#f35e20" FontSize="Medium" HorizontalTextAlignment="Center"></Label>
             <Image Source="" HeightRequest="80" VerticalOptions="Center" Margin="15"/>
 
             <StackLayout.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapApi_Tapped" NumberOfTapsRequired="1" />
+                <TapGestureRecognizer Tapped="TapImc_Tapped" NumberOfTapsRequired="1" />
             </StackLayout.GestureRecognizers>
         </StackLayout>
     </Grid>
