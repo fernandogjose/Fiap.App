@@ -47,7 +47,7 @@ namespace Fiap.App.ViewModels
                 IsBusy = true;
 
                 string json = await Client.GetStringAsync("https://api-controleacesso-abbc.azurewebsites.net/api/usuario/listar-temp");
-                var users = Monkey.FromJson(json);
+                var users = User.FromJson(json);
 
                 Users.Clear();
                 foreach (var user in users)
