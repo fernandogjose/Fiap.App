@@ -5,10 +5,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Fiap.App.ApiPage"
-             Title="API - Usuários">
+             Title="{Binding Title}"
+             xmlns:viewmodel="clr-namespace:Fiap.App.ViewModel">
+
+    <d:ContentPage.BindingContext>
+        <viewmodel:ApiPageViewModel />
+    </d:ContentPage.BindingContext>
+
     <ContentPage.Content>
+        <SearchBar Placeholder="Buscar usuário..." />
         <StackLayout Padding="15">
-            <ListView x:Name="lvUsers" HasUnevenRows="False" RowHeight="80" VerticalOptions="CenterAndExpand" SelectionMode="None">
+            <ListView x:Name="lvUsers" HasUnevenRows="False" RowHeight="80" VerticalOptions="CenterAndExpand" SelectionMode="None" ItemsSource="{Binding Users}" CachingStrategy="RecycleElement">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -23,9 +30,8 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Nome}"  FontAttributes="Bold" FontSize="Medium" TextColor="#f35e20" />
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}"  FontAttributes="Bold" FontSize="Medium" TextColor="#f35e20" />
                                 <Label Grid.Row="1" Grid.Column="0" Text="{Binding Email}" TextColor="#503026" FontSize="Small" />
-
                                 <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Source="{Binding Status}" HeightRequest="30" VerticalOptions="Center" HorizontalOptions="End" />
                             </Grid>
                         </ViewCell>
