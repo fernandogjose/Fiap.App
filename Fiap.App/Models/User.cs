@@ -1,4 +1,6 @@
-﻿namespace Fiap.App.Models
+﻿using Newtonsoft.Json;
+
+namespace Fiap.App.Models
 {
     public class User
     {

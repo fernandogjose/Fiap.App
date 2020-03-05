@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Essentials;
 using System.Linq;
-using Fiap.App.Models;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
 using System.Net.Http;
+using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Fiap.App.ViewModels
 {
@@ -32,9 +30,16 @@ namespace Fiap.App.ViewModels
             GetUserCommand = new Command(async () => await GetUsersAsync());
         }
 
-        async Task GetUserCommand(string name)
+        public void GetUser(string name)
         {
-            Users = Users.Where(x=>x.name == name);
+            // Buscar do cache
+            var users = Users.Where(x => x.Name == name).ToList();
+
+            Users.Clear();
+            foreach (var user in users)
+            {
+                Users.Add(user);
+            }
         }
 
         async Task GetUsersAsync()
@@ -47,13 +52,16 @@ namespace Fiap.App.ViewModels
                 IsBusy = true;
 
                 string json = await Client.GetStringAsync("https://api-controleacesso-abbc.azurewebsites.net/api/usuario/listar-temp");
-                var users = User.FromJson(json);
+                var users = JsonConvert.DeserializeObject<List<User>>(json);
+                // var users = User.FromJson(json);
+
+                // Gravar no cache
 
                 Users.Clear();
                 foreach (var user in users)
                 {
                     Users.Add(user);
-                }                    
+                }
             }
             catch (Exception ex)
             {

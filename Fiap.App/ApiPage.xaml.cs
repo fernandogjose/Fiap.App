@@ -42,8 +42,5 @@ namespace Fiap.App
         //}
     }
 
-    //public class UsuarioApi
-    //{
-    //    public List<Usuario> Usuarios { get; set; }
-    //}
+    
 }
