@@ -25,7 +25,7 @@
             </Grid.ColumnDefinitions>
 
             <ActivityIndicator Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
-            <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="1 0 0 0" Command="{Binding GetUsersCommand}" IsEnabled="{Binding IsNotBusy}" Text="LISTAR USUÁRIOS" FontSize="Medium" VerticalOptions="FillAndExpand" TextColor="#fff" HorizontalOptions="FillAndExpand" BackgroundColor="#f35e20" />
+            <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,1,0,0" Command="{Binding GetUsersCommand}" IsEnabled="{Binding IsNotBusy}" Text="LISTAR USUÁRIOS" FontSize="Medium" VerticalOptions="FillAndExpand" TextColor="#fff" HorizontalOptions="FillAndExpand" BackgroundColor="#f35e20" />
             <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lvUsers" HasUnevenRows="False" RowHeight="80" VerticalOptions="CenterAndExpand" SelectionMode="None" ItemsSource="{Binding Users}" CachingStrategy="RecycleElement" IsEnabled="{Binding IsNotBusy}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
