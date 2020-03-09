@@ -41,9 +41,18 @@ namespace Fiap.App.ViewModels
 
                 // Popula o objeto da a listview
                 Users.Clear();
+                double row = 1;
                 foreach (var user in userApiResponse.Users)
                 {
+                    user.BackgroundColor = "white";
+                    if (row % 2 == 0)
+                    {
+                        user.BackgroundColor = "#efefef";
+                    }
+
+                    user.Status = $"{user.Status.ToLower()}.png";
                     Users.Add(user);
+                    row++;
                 }
             }
             catch (Exception ex)

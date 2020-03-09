@@ -13,6 +13,8 @@ namespace Fiap.App.Models
 
         [JsonProperty("status")]
         public string Status { get; set; }
+
+        public string BackgroundColor { get; set; }
     }
 
     public class UserApiResponse
