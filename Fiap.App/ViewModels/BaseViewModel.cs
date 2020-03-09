@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Fiap.App.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public BaseViewModel()
-        {
-
-        }
-
         string title;
+        bool isBusy;
+
         public string Title
         {
             get => title;
@@ -25,8 +19,7 @@ namespace Fiap.App.ViewModels
                 OnPropertyChanged();
             }
         }
-
-        bool isBusy;
+        
         public bool IsBusy
         {
             get => isBusy;
@@ -43,6 +36,7 @@ namespace Fiap.App.ViewModels
         public bool IsNotBusy => !IsBusy;
 
         public event PropertyChangedEventHandler PropertyChanged;
+        
         public void OnPropertyChanged([CallerMemberName]string propertyName = "") => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
