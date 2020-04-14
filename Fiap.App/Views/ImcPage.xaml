@@ -4,10 +4,45 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Fiap.App.ImcPage">
+             x:Class="Fiap.App.ImcPage"
+             Title="{Binding Title}"
+             xmlns:viewmodel="clr-namespace:Fiap.App.ViewModels">
+
+    <ContentPage.BindingContext>
+        <viewmodel:ImcPageViewModel></viewmodel:ImcPageViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelResultado" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="TextColor" Value="Blue"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Nome" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid Padding="15" RowSpacing="10" ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <Entry Text="{Binding Altura}" Placeholder="Altura (ex: 1.60)" Keyboard="Numeric" />
+            <Entry Text="{Binding Peso}" Grid.Row="0" Grid.Column="1" x:Name="txtPeso" Placeholder="Peso (ex: 75.6)" Keyboard="Numeric" />
+
+            <Button Grid.Row="1" Grid.Column="0" Text="Calcular" Command="{Binding CalcularCommand}"/>
+            <Button Grid.Row="1" Grid.Column="1" Text="Limpar" Command="{Binding LimparCommand}"/>
+
+            <StackLayout Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <Label x:Name="lblResultado" Text="{Binding Resultado, StringFormat='Seu IMC: {0}'}" IsVisible="{Binding Ativo}" Style="{StaticResource labelResultado}" />
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
